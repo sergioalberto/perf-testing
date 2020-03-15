@@ -15,3 +15,6 @@ docker rm jmeter > /dev/null 2>&1
 docker run --name jmeter -i -v ${PWD}:${PWD} -w ${PWD} sergiogq/jmeter:5.1.1 $@ -n -JHOST=google.com -t examples/GoogleSimpleRequest.jmx -Dlog_level.jmeter=DEBUG -j jmeter.log -l jmeter.jtl -e -o results
 ```
 
+#### Notes:
+- Apache JMeter Version: 5.2.1
+
