@@ -18,3 +18,5 @@ docker run --name jmeter -i -v ${PWD}:${PWD} -w ${PWD} sergiogq/jmeter:5.1.1 $@ 
 #### Notes:
 - Apache JMeter Version: 5.2.1
 
+For more information, go to this [post](http://sergioalbertogq.blogspot.com/2020/03/learning-about-performance-testing.html).
+
