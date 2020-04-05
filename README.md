@@ -3,8 +3,10 @@ Examples how to do Performance Testing to any application with [Apache JMeter](h
 
 ## Run JMeter in Non-GUI Mode
 ```sh
-rm -rf results/ jmeter.jtl
+rm -rf results/ jmeter.jtl 
 jmeter -n -JHOST=google.com -t examples/GoogleSimpleRequest.jmx -l jmeter.jtl -e -o results
+jmeter -n -p dev.properties -t workshop/simpleRequest.jmx
+jmeter -n -q dev.properties -t workshop/simpleRequest.jmx -l jmeter.jtl -e -o results
 ```
 
 ## Run JMeter with Docker
@@ -12,6 +14,7 @@ jmeter -n -JHOST=google.com -t examples/GoogleSimpleRequest.jmx -l jmeter.jtl -e
 ./build.sh
 docker stop jmeter > /dev/null 2>&1
 docker rm jmeter > /dev/null 2>&1
+rm -rf results/ jmeter.jtl
 docker run --name jmeter -i -v ${PWD}:${PWD} -w ${PWD} sergiogq/jmeter:5.1.1 $@ -n -JHOST=google.com -t examples/GoogleSimpleRequest.jmx -Dlog_level.jmeter=DEBUG -j jmeter.log -l jmeter.jtl -e -o results
 ```
 

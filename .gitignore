@@ -24,4 +24,5 @@ hs_err_pid*
 
 jmeter.jtl
 results/
+workshop/listeners/results.csv
 
